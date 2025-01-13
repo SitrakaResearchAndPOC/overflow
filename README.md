@@ -208,6 +208,12 @@ gcc -o somme_signed somme_signed.c
 ```
 chmod +x somme_signed
 ```
+```
+./somme_signed
+```
+```
+rm -rf somme_signed
+```
 
 * overflow float
 ```
@@ -248,6 +254,9 @@ rm -rf float_overflow
 ```
 
 * overflow float_patched
+```
+nano float_overflow.c
+```
 ```
 #include <stdio.h>
 #include <math.h>
@@ -298,5 +307,8 @@ Entrez une valeur pour x : 0.0000075 </br>
 NON OK
 
 
+```
+rm -rf float_overflow
+```
 
 
