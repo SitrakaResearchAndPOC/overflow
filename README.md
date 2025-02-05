@@ -393,9 +393,42 @@ ulimit -c unlimited
 python3 -c 'print("A"*700)' | ./vuln
 ```
 ```
+gdb-peda -q ./vuln
+```
+```
+disas main
+```
+we can see the overflow function
+```
+disas overflow
+```
+ctrl+shift+T, new terminal 2 : 
+```
 python3 -c 'print("A"*700)' > input.txt
 ```
-after breakpoint
+On terminal 1 : </br>
+add one breakpoint before read function : address before <read@plt>,  </br>
+add one breakpoint after read function  : address after <read@plt>, </br>
+add one breakpoint at retfunction  : address at ret, </br>
+```
+b *<address before <read@plt>>
+```
+```
+b *< address after <read@plt>>
+```
+```
+b *<address at ret>
+```
+run : 
+```
+run < input.txt
+```
+OR
+```
+run $(python3 -c 'print("A"*700)')
+```
+
+
 ```
 x $eip
 ```
