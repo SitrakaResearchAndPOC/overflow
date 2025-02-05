@@ -593,7 +593,7 @@ In first terminal
 run < input.txt
 ```
 x/230wx $esp-0x250
-Find where our payload START, where it begin 0x414141
+Find where our payload START, where it begin 0x414141 </br></br>
 0xbfffed60:  0x00403eec   0xb7ffeba0   0xbfffefa8   0xb7c53fe5 </br>
 0xbfffed70:  0xb7e1eda0   0x00402018   0xb7ffa020   0xbfffed94 </br>
 0xbfffed90:  0x00402018   0x000002bc   0xbfffeda8   0x00000000 </br>
