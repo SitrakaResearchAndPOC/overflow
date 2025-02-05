@@ -355,6 +355,12 @@ cd ~/gdb-peda-pwndbg-gef
 ./install.sh
 ```
 ```
+mkdir chapter1
+```
+```
+cd chapter1
+```
+```
 nano vuln.c 
 ```
 ```
