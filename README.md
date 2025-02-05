@@ -458,9 +458,13 @@ c
 ```
 x $ebp-0x200
 ```
+```
+p $ebp-0x200
+```
+Copy the output address as <input address>
 find input : 
 ```
-x/4wx
+x/4wx <input address>
 ```
 ``` 
 x/100wx <use address at $ebp-0x200>
