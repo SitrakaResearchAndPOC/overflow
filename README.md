@@ -495,7 +495,7 @@ Getting pattern ::
 pattern_create 700 pattern.txt
 ```
 ```
-gdb -q ./vuln
+gdb-peda -q ./vuln
 ```
 ```
 d
