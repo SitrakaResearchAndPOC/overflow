@@ -387,6 +387,12 @@ gcc -g -fno-stack-protector -z execstack -no-pie -m32 -o vuln vuln.c
 python3 -c 'print("A"*700)' | ./vuln
 ```
 ```
+ulimit -c unlimited
+```
+```
+python3 -c 'print("A"*700)' | ./vuln
+```
+```
 python3 -c 'print("A"*700)' > input.txt
 ```
 after breakpoint
