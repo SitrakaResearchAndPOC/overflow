@@ -439,7 +439,7 @@ ADD BREAKPOINT LIKE LAST
 x $eip
 ```
 ```
-p/5i $eip
+x/5i $eip
 ```
 ```
 x $ebp-0x200
