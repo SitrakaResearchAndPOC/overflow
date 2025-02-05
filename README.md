@@ -427,13 +427,19 @@ OR
 ```
 run $(python3 -c 'print("A"*700)')
 ```
-
+```
+d
+```
+```
+disas overflow
+```
+ADD BREAKPOINT LIKE LAST
 
 ```
 x $eip
 ```
 ```
-p/50 $eip
+p/5i $eip
 ```
 ```
 x $ebp-0x200
