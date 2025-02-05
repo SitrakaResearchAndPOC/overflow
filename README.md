@@ -344,6 +344,16 @@ apt install git build-essential libc6-dev gcc-multilib g++-multilib
 ```
 find /usr/include -name "libc-header-start.h"
 ```
+Installation [gdb-peda](https://github.com/apogiatzis/gdb-peda-pwndbg-gef) </br>
+Non root mode
+```
+exit
+```
+```
+cd ~ && git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git
+cd ~/gdb-peda-pwndbg-gef
+./install.sh
+```
 ```
 nano vuln.c 
 ```
