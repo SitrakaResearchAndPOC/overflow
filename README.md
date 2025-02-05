@@ -508,7 +508,7 @@ pattern_offset <@finded>
 ```
 should be found at <@offset>
 ```
-python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4)) > input.txt
+python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4))' > input.txt
 ```
 ```
 cat input.txt
