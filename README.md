@@ -451,17 +451,19 @@ find input :
 ```
 x/4wx <use address at $ebp-0x200>
 ```
+Majority with zero </br>
 tape continue
 ```
 c
 ```
-```
-x $ebp-0x200
-```
-```
-p $ebp-0x200
-```
 Copy the output address as <input address>
+```
+x/4wx <input address>
+```
+tape continue
+```
+c
+```
 find input : 
 ```
 x/4wx <input address>
@@ -478,6 +480,7 @@ x $eip
 ```
 p $esp
 ```
+the result is  <p of esp>
 ```
 x/4wx <p of esp>
 ```
@@ -487,6 +490,7 @@ c
 ```
 exit
 ```
+Getting pattern :: 
 ```
 pattern_create 700 pattern.txt
 ```
