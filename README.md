@@ -633,7 +633,7 @@ Installing metasploit [ubuntu22.04](https://www.howtoforge.com/how-to-install-me
 apt update
 ```
 ```
-apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip ruby ruby-full ruby-bundler  build-essential libyaml-dev -y
+apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip ruby ruby-full ruby-bundler  build-essential libyaml-dev net-tools-y
 ```
 ```
 apt install -y nmap
