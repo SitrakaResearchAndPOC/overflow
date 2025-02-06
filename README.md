@@ -339,7 +339,7 @@ int main(int argc, char * argv[]) {
 sudo su
 ```
 ```
-apt install git build-essential libc6-dev gcc-multilib g++-multilib
+apt install git build-essential libc6-dev gcc-multilib g++-multilib nasm binutils gcc libc6-dev-i386 gcc-multilib git
 ```
 ```
 find /usr/include -name "libc-header-start.h"
