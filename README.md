@@ -633,7 +633,7 @@ Installing metasploit [ubuntu22.04](https://www.howtoforge.com/how-to-install-me
 apt update
 ```
 ```
-apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip ruby ruby-full ruby-bundler -y
+apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip ruby ruby-full ruby-bundler  build-essential libyaml-dev -y
 ```
 ```
 apt install -y nmap
@@ -642,13 +642,33 @@ apt install -y nmap
 gem install bundler
 ```
 ```
-bundle install
+touch Gemfile
 ```
 ```
-bundle update
+nano Gemfile
+```
+Copy and save
+```
+source "https://rubygems.org"
+
+gem "rails"  # Example gem, replace with what you need
+```
+
+exit if root account
+```
+sudo bundle install
 ```
 ```
-bundle install rex-text
+sudo bundle update
+```
+```
+sudo gem install rex-text
+```
+```
+sudo bundle install
+```
+```
+sudo bundle update
 ```
 
 ```
