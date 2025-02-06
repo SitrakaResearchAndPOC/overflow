@@ -683,6 +683,10 @@ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/t
 ```
  sudo ./msfinstall
 ```
+run in root : 
+```
+sudo su
+```
 ```
 msfconsole
 ```
