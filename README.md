@@ -518,7 +518,7 @@ python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4))' > input.txt
 ```
 cat input.txt
 ```
-In GDB-PEDA
+In first terminal : GDB-PEDA
 ```
 run < input.txt
 ```
@@ -570,6 +570,9 @@ In another terminal :
 python3 -c 'print("A"*516+ "B"*4 + "C"*(180))' > input.txt
 ```
 In first terminal 
+```
+gdb-peda -q ./vuln
+```
 ```
 run < input.txt
 ```
