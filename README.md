@@ -664,6 +664,7 @@ cd /opt/metasploit-framework/embedded/framework/tools/exploit
 ```
 sudo ln -s $(pwd)/pattern_create.rb /usr/local/bin/msf-pattern_create
 ```
+```
 sudo ln -s /opt/metasploit-framework/bin/msf-pattern_create /usr/local/bin/msf-pattern_create
 ```
 ```
