@@ -609,8 +609,9 @@ Find where our payload START, where it begin 0x414141 </br></br>
 ```
 0xbfffed60:  0x00403eec   0xb7ffeba0   0xbfffefa8   0xb7c53fe5 
 0xbfffed70:  0xb7e1eda0   0x00402018   0xb7ffa020   0xbfffed94 
+0xbfffed80:  0x00402018   0xb7ffeba0   0xb7c53fc5   0x0040121e
 0xbfffed90:  0x00402018   0x000002bc   0xbfffeda8   0x00000000 
-0xbfffeda0:  0x00000000   0x41414141   0x41414141   0x41414141 
+0xbfffeda0:  0x00000000   0x00000000   0x41414141   0x41414141 
 0xbfffedb0:  0x41414141   0x41414141   0x41414141   0x41414141 
 0xbfffedc0:  0x41414141   0x41414141   0x41414141   0x41414141 
 0xbfffedd0:  0x41414141   0x41414141   0x41414141   0x41414141
@@ -625,7 +626,7 @@ Find where our payload START, where it begin 0x414141 </br></br>
 0xbfffee60:  0x41414141   0x41414141   0x41414141   0x41414141 
 ```
 
-So address is : 0xbfffeda8 </br>
+So address is : 0xbfffeda8 = 0xbfffeda0 + 8 </br>
 \xbf\xff\xed\xa8 </br> </br>
 Find adress by </br></br>
 Installing metasploit [ubuntu22.04](https://www.howtoforge.com/how-to-install-metasploit-framework-on-ubuntu-22-04/) [ubuntu20.04](https://www.howtoforge.com/how-to-install-metasploit-framework-on-ubuntu-20-04/)
