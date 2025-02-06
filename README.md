@@ -563,7 +563,7 @@ int main(int argc, char * argv[]) {
 }
 ```
 ```
-gcc -g -fno-stack-protector -z execstack -no-pie -o vuln vuln.c
+gcc -g -fno-stack-protector -z execstack -no-pie -m32 -o vuln vuln.c
 ```
 In another terminal : 
 ```
