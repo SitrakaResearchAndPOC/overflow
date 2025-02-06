@@ -493,6 +493,9 @@ c
 ```
 exit
 ```
+```
+gdb-peda -q ./vuln
+```
 Getting pattern :: 
 ```
 pattern_create 700 pattern.txt
@@ -507,7 +510,8 @@ run < pattern.txt
 ```
 pattern_offset <@finded>
 ```
-should be found at <@offset>
+should be found at <@offset> </br>
+In  the terminal 2
 ```
 python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4))' > input.txt
 ```
