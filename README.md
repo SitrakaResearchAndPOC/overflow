@@ -624,10 +624,22 @@ Installing metasploit [ubuntu22.04](https://www.howtoforge.com/how-to-install-me
 apt update
 ```
 ```
-apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip -y
+apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip ruby ruby-full -y
 ```
 ```
 apt install -y nmap
+```
+```
+gem install bundler
+```
+```
+bundle install
+```
+```
+bundle update
+```
+```
+bundle install rex-text
 ```
 
 ```
@@ -648,6 +660,14 @@ msfconsole
 tape ctrl+x
 ```
 msfupdate
+```
+```
+cd /opt/metasploit-framework/embedded/framework/tools/exploit
+```
+```
+sudo ln -s $(pwd)/pattern_create.rb /usr/local/bin/msf-pattern_create
+```
+sudo ln -s /opt/metasploit-framework/bin/msf-pattern_create /usr/local/bin/msf-pattern_create
 ```
 ```
 ip a
@@ -694,9 +714,6 @@ In the first terminal
 ```
 run < payload.txt
 ```
-
-
-
 
 
 
