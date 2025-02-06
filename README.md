@@ -563,7 +563,7 @@ gcc -g -fno-stack-protector -z execstack -no-pie -o vuln vuln.c
 ```
 In another terminal : 
 ```
-python3 -c 'print("A"*516+ "B"*4 + "C"*(180) > input.txt
+python3 -c 'print("A"*516+ "B"*4 + "C"*(180))' > input.txt
 ```
 In first terminal 
 ```
@@ -589,7 +589,7 @@ run < input.txt
 We can jump to ANY ADDESS  </br>
 Generate SHELLCODEIn another terminal : 
 ```
-python3 -c 'print("A"*516+ "B"*4 + "C"*(180) > input.txt
+python3 -c 'print("A"*516+ "B"*4 + "C"*(180))' > input.txt
 ```
 In first terminal 
 ```
