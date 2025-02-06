@@ -355,10 +355,7 @@ cd ~/gdb-peda-pwndbg-gef
 ./install.sh
 ```
 ```
-gdb-peda
-```
-```
-./update
+./update.sh
 ```
 ```
 mkdir chapter1
@@ -500,9 +497,7 @@ Getting pattern ::
 ```
 pattern_create 700 pattern.txt
 ```
-```
-gdb-peda -q ./vuln
-```
+In GDB-PEDA
 ```
 d
 ```
@@ -519,12 +514,14 @@ python3 -c 'print("A"*516+ "B"*4 + "C"*(700-516-4))' > input.txt
 ```
 cat input.txt
 ```
-```
-gdb-peda -q ./vuln
-```
+In GDB-PEDA
 ```
 run < input.txt
 ```
+```
+quit
+```
+
 ```
 cd ..
 ```
