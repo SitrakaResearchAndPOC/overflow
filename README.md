@@ -618,7 +618,37 @@ Find where our payload START, where it begin 0x414141 </br></br>
 0xbfffee60:  0x41414141   0x41414141   0x41414141   0x41414141 </br>
 So address is : 0xbfffeda8 </br>
 \xbf\xff\xed\xa8 </br> </br>
-Find adress by 
+Find adress by </br></br>
+Installing metasploit [ubuntu22.04](https://www.howtoforge.com/how-to-install-metasploit-framework-on-ubuntu-22-04/) [ubuntu20.04](https://www.howtoforge.com/how-to-install-metasploit-framework-on-ubuntu-20-04/)
+```
+apt update
+```
+```
+apt install wget curl nano ufw software-properties-common dirmngr apt-transport-https gnupg2 ca-certificates lsb-release ubuntu-keyring unzip -y
+```
+```
+apt install -y nmap
+```
+
+```
+mkdir msf-install && cd ./msf-install
+```
+```
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+```
+```
+ chmod 755 msfinstall
+```
+```
+ sudo ./msfinstall
+```
+```
+msfconsole
+```
+tape ctrl+x
+```
+msfupdate
+```
 ```
 ip a
 ```
